@@ -1,9 +1,7 @@
 <template>
   <section>
     <base-card>
-      <ul>
-        <li v-for="job in filteredJobs" :key="job.id">{{ job.position }}</li>
-      </ul>
+      <h1>{{}}</h1>
     </base-card>
   </section>
 </template>
@@ -12,7 +10,7 @@
 export default {
   computed: {
     filteredJobs() {
-      return this.$store.getters.jobs;
+      return this.$store.jobs;
     },
   },
 };
