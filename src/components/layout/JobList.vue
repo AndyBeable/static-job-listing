@@ -1,12 +1,14 @@
 <template>
   <section>
     <ul>
-      <job-item
-        v-for="job in jobs"
-        :key="job.id"
-        :company="job.company"
-        :position="job.position"
-      ></job-item>
+      <base-card>
+        <job-item
+          v-for="job in jobs"
+          :key="job.id"
+          :company="job.company"
+          :position="job.position"
+        ></job-item>
+      </base-card>
     </ul>
   </section>
 </template>
