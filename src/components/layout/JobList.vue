@@ -5,6 +5,7 @@
         v-for="job in jobs"
         :key="job.id"
         :company="job.company"
+        :position="job.position"
       ></job-item>
     </ul>
   </section>
