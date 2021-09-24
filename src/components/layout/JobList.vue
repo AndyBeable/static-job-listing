@@ -7,6 +7,11 @@
           :key="job.id"
           :company="job.company"
           :position="job.position"
+          :logo="job.logo"
+          :postedAt="job.postedAt"
+          :contract="job.contract"
+          :location="job.location"
+          :image="job.image"
         ></job-item>
       </base-card>
     </ul>
@@ -23,7 +28,7 @@ export default {
         {
           id: 1,
           company: 'Photosnap',
-          logo: './images/photosnap.svg',
+          logo: '../../assets/photosnap.svg',
           new: true,
           featured: true,
           position: 'Senior Frontend Developer',
@@ -34,6 +39,7 @@ export default {
           location: 'USA Only',
           languages: ['HTML', 'CSS', 'JavaScript'],
           tools: [],
+          image: '../../assets/profile.jpeg',
         },
         {
           id: 2,

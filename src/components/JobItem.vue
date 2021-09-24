@@ -1,13 +1,26 @@
 <template>
   <div class="job-item">
+    <img :src="image" alt="" />
     <h1>{{ company }}</h1>
     <p>{{ position }}</p>
+    <p>{{ postedAt }}</p>
+    <p>{{ contract }}</p>
+    <p>{{ location }}</p>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['id', 'company', 'position'],
+  props: [
+    'id',
+    'company',
+    'position',
+    'logo',
+    'postedAt',
+    'contract',
+    'location',
+    'image',
+  ],
   computed: {},
 };
 </script>
@@ -23,5 +36,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+img {
+  height: 100px;
+  width: 100px;
 }
 </style>
