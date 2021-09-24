@@ -38,7 +38,6 @@ export default {
   padding: 2rem 1rem;
   border-left: 5px solid #5ba4a4;
   display: flex;
-  justify-content: center;
   align-items: center;
   position: relative;
   height: 15rem;
@@ -59,10 +58,14 @@ h3 {
 .position {
   font-weight: 700;
   font-size: 1.1rem;
+  margin-bottom: -2px;
 }
 
 .job-details {
   display: flex;
+  align-items: center;
+  justify-items: center;
+  border-bottom: 2px solid #c7d6d6;
 }
 
 .job-details p {
