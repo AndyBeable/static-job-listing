@@ -181,3 +181,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+section {
+  display: flex;
+}
+</style>

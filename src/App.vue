@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@200;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@200;400;500;700&display=swap');
 
 html {
   font-family: 'Spartan', sans-serif;
