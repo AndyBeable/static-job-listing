@@ -1,6 +1,7 @@
 <template>
   <div class="job-item">
     <img :src="require('../assets/photosnap.svg')" alt="logo" class="logo" />
+    <!-- <img v-bind:src="'../assets/" alt="" /> -->
     <div>
       <h3>{{ company }}</h3>
       <p class="position">{{ position }}</p>
@@ -65,7 +66,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-items: center;
-  border-bottom: 2px solid #c7d6d6;
+  border-bottom: 1px solid rgba(199, 214, 214, 1);
 }
 
 .job-details p {
