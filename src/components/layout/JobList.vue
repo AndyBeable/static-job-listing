@@ -12,6 +12,7 @@
           :contract="job.contract"
           :location="job.location"
           :image="job.image"
+          :languages="job.languages"
         ></job-item>
       </base-card>
     </ul>
@@ -179,6 +180,7 @@ export default {
       ],
     };
   },
+  computed: {},
 };
 </script>
 

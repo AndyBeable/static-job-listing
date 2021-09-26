@@ -10,6 +10,9 @@
         <p>{{ contract }}</p>
         <p>{{ location }}</p>
       </div>
+      <ul>
+        <li v-for="language in languages" :key="language">{{ language }}</li>
+      </ul>
     </div>
   </div>
 </template>
@@ -25,6 +28,7 @@ export default {
     'contract',
     'location',
     'image',
+    'languages',
   ],
   computed: {},
 };
@@ -67,6 +71,7 @@ h3 {
   align-items: center;
   justify-items: center;
   border-bottom: 1px solid rgba(199, 214, 214, 1);
+  margin-bottom: 1rem;
 }
 
 .job-details p {
@@ -75,6 +80,24 @@ h3 {
 }
 
 .job-details p:not(:last-of-type) {
+  margin-right: 10px;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+}
+
+li {
+  color: #5ba4a4;
+  background-color: #eef6f6;
+  font-weight: 700;
+  font-size: 0.6rem;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+li:not(:last-of-type) {
   margin-right: 10px;
 }
 </style>
