@@ -11,7 +11,6 @@
           :postedAt="job.postedAt"
           :contract="job.contract"
           :location="job.location"
-          :image="job.image"
           :role="job.role"
           :level="job.level"
           :languages="job.languages"
@@ -32,7 +31,7 @@ export default {
         {
           id: 1,
           company: 'Photosnap',
-          logo: '../../assets/photosnap.svg',
+          logo: '../assets/photosnap.svg',
           new: true,
           featured: true,
           position: 'Senior Frontend Developer',
@@ -43,7 +42,6 @@ export default {
           location: 'USA Only',
           languages: ['HTML', 'CSS', 'JavaScript'],
           tools: [],
-          image: '../../assets/profile.jpeg',
         },
         {
           id: 2,

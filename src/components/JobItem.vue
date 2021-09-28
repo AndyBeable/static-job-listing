@@ -1,8 +1,8 @@
 <template>
   <div class="job-item">
-    <img :src="require('../assets/photosnap.svg')" alt="logo" class="logo" />
-    <!-- <img v-bind:src="'../assets/" alt="" /> -->
-    <!-- <img :src="image" alt="logo" class="logo" /> -->
+    <!-- <img :src="require('../assets/photosnap.svg')" alt="logo" class="logo" /> -->
+    <img :src="logo" alt="logo" class="logo" />
+
     <div>
       <h3>{{ company }}</h3>
       <p class="position">{{ position }}</p>
@@ -115,7 +115,7 @@ button {
   font-weight: 700;
   font-size: 0.6rem;
   border-radius: 6px;
-  padding: 1rem;
+  padding: 0.5rem 0.5rem;
   outline: none;
   border: none;
   cursor: pointer;
