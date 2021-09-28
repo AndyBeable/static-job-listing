@@ -1,16 +1,20 @@
 <template>
   <div class="job-item">
-    <img :src="logo" alt="logo" class="logo" />
+    <div class="logo-container">
+      <img :src="logo" alt="logo" class="logo" />
+    </div>
     <div>
-      <div class="titles">
-        <h3>{{ company }}</h3>
-        <p class="position">{{ position }}</p>
-      </div>
+      <div class="job-container">
+        <div>
+          <h3>{{ company }}</h3>
+          <p class="position">{{ position }}</p>
+        </div>
 
-      <div class="job-details">
-        <p>{{ postedAt }}</p>
-        <p>{{ contract }}</p>
-        <p>{{ location }}</p>
+        <div class="job-details">
+          <p>{{ postedAt }}</p>
+          <p>{{ contract }}</p>
+          <p>{{ location }}</p>
+        </div>
       </div>
       <div class="actions">
         <ul>
@@ -66,10 +70,9 @@ export default {
   border-radius: 6px;
   padding: 2rem 1rem;
   border-left: 5px solid #5ba4a4;
-  display: flex;
-  align-items: center;
   position: relative;
   height: 15rem;
+  display: flex;
 }
 
 .logo {
