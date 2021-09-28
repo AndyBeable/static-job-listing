@@ -12,7 +12,10 @@
           :contract="job.contract"
           :location="job.location"
           :image="job.image"
+          :role="job.role"
+          :level="job.level"
           :languages="job.languages"
+          :tools="job.tools"
         ></job-item>
       </base-card>
     </ul>

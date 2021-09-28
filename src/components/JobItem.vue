@@ -5,13 +5,17 @@
     <div>
       <h3>{{ company }}</h3>
       <p class="position">{{ position }}</p>
+
       <div class="job-details">
         <p>{{ postedAt }}</p>
         <p>{{ contract }}</p>
         <p>{{ location }}</p>
       </div>
       <ul>
+        <li>{{ role }}</li>
+        <li>{{ level }}</li>
         <li v-for="language in languages" :key="language">{{ language }}</li>
+        <li v-for="tool in tools" :key="tool">{{ tool }}</li>
       </ul>
     </div>
   </div>
@@ -29,6 +33,9 @@ export default {
     'location',
     'image',
     'languages',
+    'role',
+    'level',
+    'tools',
   ],
   computed: {},
 };
