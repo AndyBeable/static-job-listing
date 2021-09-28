@@ -31,5 +31,6 @@ body {
   margin: 0;
   padding: 0;
   background-color: #effafa;
+  max-width: 100%;
 }
 </style>

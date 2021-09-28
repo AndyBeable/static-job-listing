@@ -7,6 +7,5 @@
 <style scoped>
 .card {
   margin: 2rem auto;
-  max-width: 60rem;
 }
 </style>

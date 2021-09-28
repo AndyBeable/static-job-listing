@@ -60,7 +60,8 @@ export default {
 <style scoped>
 .job-item {
   box-shadow: 0 2px 10px #5ba4a4;
-  margin: 6rem 0;
+  margin: 6rem auto;
+  width: 90%;
   background: #fff;
   border-radius: 6px;
   padding: 2rem 1rem;

@@ -188,4 +188,8 @@ export default {
 section {
   display: flex;
 }
+
+ul {
+  padding: 0;
+}
 </style>
