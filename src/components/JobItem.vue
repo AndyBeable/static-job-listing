@@ -1,31 +1,33 @@
 <template>
   <div class="job-item">
-    <!-- <img :src="require('../assets/photosnap.svg')" alt="logo" class="logo" /> -->
     <img :src="logo" alt="logo" class="logo" />
-
     <div>
-      <h3>{{ company }}</h3>
-      <p class="position">{{ position }}</p>
+      <div class="titles">
+        <h3>{{ company }}</h3>
+        <p class="position">{{ position }}</p>
+      </div>
 
       <div class="job-details">
         <p>{{ postedAt }}</p>
         <p>{{ contract }}</p>
         <p>{{ location }}</p>
       </div>
-      <ul>
-        <li>
-          <button @click="test">{{ role }}</button>
-        </li>
-        <li>
-          <button @click="test">{{ level }}</button>
-        </li>
-        <li v-for="language in languages" :key="language">
-          <button @click="test">{{ language }}</button>
-        </li>
-        <li v-for="tool in tools" :key="tool">
-          <button @click="test">{{ tool }}</button>
-        </li>
-      </ul>
+      <div class="actions">
+        <ul>
+          <li>
+            <button @click="test">{{ role }}</button>
+          </li>
+          <li>
+            <button @click="test">{{ level }}</button>
+          </li>
+          <li v-for="language in languages" :key="language">
+            <button @click="test">{{ language }}</button>
+          </li>
+          <li v-for="tool in tools" :key="tool">
+            <button @click="test">{{ tool }}</button>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -58,7 +60,7 @@ export default {
 <style scoped>
 .job-item {
   box-shadow: 0 2px 10px #5ba4a4;
-  margin: 4rem 0;
+  margin: 6rem 0;
   background: #fff;
   border-radius: 6px;
   padding: 2rem 1rem;
@@ -71,14 +73,16 @@ export default {
 
 .logo {
   position: absolute;
-  top: -3rem;
+  top: -2.5rem;
   left: 1rem;
+  height: 4rem;
 }
 
 h3 {
   color: #5ba4a4;
   font-weight: 700;
   font-size: 0.9rem;
+  margin-bottom: -10px;
 }
 
 .position {
@@ -106,7 +110,13 @@ h3 {
 
 ul {
   display: flex;
+  flex-wrap: wrap;
+  padding: 0;
   list-style: none;
+}
+
+.actions {
+  width: 80%;
 }
 
 button {
@@ -120,6 +130,9 @@ button {
   border: none;
   cursor: pointer;
   transition: 0.3s ease;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 0;
 }
 
 button:hover {

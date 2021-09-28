@@ -7,16 +7,6 @@
   </section>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      image: { backgroundImage: "url('../assets/bg-header-desktop.svg')" },
-    };
-  },
-};
-</script>
-
 <style scoped>
 .image {
   background-size: cover;
