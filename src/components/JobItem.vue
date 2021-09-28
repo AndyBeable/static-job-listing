@@ -119,6 +119,12 @@ button {
   outline: none;
   border: none;
   cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  color: #eef6f6;
+  background-color: #5ba4a4;
 }
 
 li:not(:last-of-type) {
