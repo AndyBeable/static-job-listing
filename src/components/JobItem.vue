@@ -2,6 +2,7 @@
   <div class="job-item">
     <img :src="require('../assets/photosnap.svg')" alt="logo" class="logo" />
     <!-- <img v-bind:src="'../assets/" alt="" /> -->
+    <!-- <img :src="image" alt="logo" class="logo" /> -->
     <div>
       <h3>{{ company }}</h3>
       <p class="position">{{ position }}</p>
@@ -12,10 +13,18 @@
         <p>{{ location }}</p>
       </div>
       <ul>
-        <li>{{ role }}</li>
-        <li>{{ level }}</li>
-        <li v-for="language in languages" :key="language">{{ language }}</li>
-        <li v-for="tool in tools" :key="tool">{{ tool }}</li>
+        <li>
+          <button @click="test">{{ role }}</button>
+        </li>
+        <li>
+          <button @click="test">{{ level }}</button>
+        </li>
+        <li v-for="language in languages" :key="language">
+          <button @click="test">{{ language }}</button>
+        </li>
+        <li v-for="tool in tools" :key="tool">
+          <button @click="test">{{ tool }}</button>
+        </li>
       </ul>
     </div>
   </div>
@@ -38,6 +47,11 @@ export default {
     'tools',
   ],
   computed: {},
+  methods: {
+    test() {
+      console.log('Clicked');
+    },
+  },
 };
 </script>
 
@@ -95,13 +109,16 @@ ul {
   list-style: none;
 }
 
-li {
+button {
   color: #5ba4a4;
   background-color: #eef6f6;
   font-weight: 700;
   font-size: 0.6rem;
   border-radius: 6px;
   padding: 1rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 
 li:not(:last-of-type) {
