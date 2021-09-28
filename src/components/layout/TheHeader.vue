@@ -1,6 +1,9 @@
 <template>
   <section>
-    <div :style="image" class="image"></div>
+    <div
+      :style="{ backgroundImage: 'url(/assets/bg-header-desktop.svg)' }"
+      class="image"
+    ></div>
   </section>
 </template>
 
@@ -8,7 +11,7 @@
 export default {
   data() {
     return {
-      image: { backgroundImage: "url('/src/assets/bg-header-desktop.svg')" },
+      image: { backgroundImage: "url('../assets/bg-header-desktop.svg')" },
     };
   },
 };
