@@ -19,13 +19,13 @@
       <div class="actions">
         <ul>
           <li>
-            <button @click="test">{{ role }}</button>
+            <button @click="filterByRole">{{ role }}</button>
           </li>
           <li>
             <button @click="test">{{ level }}</button>
           </li>
           <li v-for="language in languages" :key="language">
-            <button @click="test">{{ language }}</button>
+            <button @click="filterByLanguage(language)">{{ language }}</button>
           </li>
           <li v-for="tool in tools" :key="tool">
             <button @click="test">{{ tool }}</button>
@@ -54,8 +54,11 @@ export default {
   ],
   computed: {},
   methods: {
-    test() {
-      console.log('Clicked');
+    filterByRole() {
+      this.$emit('clickedOnRole', this.role);
+    },
+    filterByLanguage(language) {
+      this.$emit('clickedOnLanguage', language);
     },
   },
 };

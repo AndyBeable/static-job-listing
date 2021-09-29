@@ -1,9 +1,17 @@
 <template>
   <section>
     <ul>
+      <li v-if="filters.role">{{ filters.role }}</li>
+      <li v-if="filters.level">{{ filters.level }}</li>
+      <li v-for="language in filters.languages" :key="language">
+        {{ language }}
+      </li>
+      <li v-for="tool in filters.tools" :key="tool">{{ tool }}</li>
+    </ul>
+    <ul>
       <base-card>
         <job-item
-          v-for="job in jobs"
+          v-for="job in filteredJobs"
           :key="job.id"
           :company="job.company"
           :position="job.position"
@@ -15,6 +23,8 @@
           :level="job.level"
           :languages="job.languages"
           :tools="job.tools"
+          @clicked-on-role="applyRoleFilter"
+          @clicked-on-language="applyLanguageFilter"
         ></job-item>
       </base-card>
     </ul>
@@ -24,6 +34,7 @@
 <script>
 import JobItem from '../JobItem.vue';
 export default {
+  name: 'JobList',
   components: { JobItem },
   data() {
     return {
@@ -179,7 +190,44 @@ export default {
           tools: ['React', 'Sass'],
         },
       ],
+      filters: {
+        role: '',
+        level: '',
+        languages: [],
+        tools: [],
+      },
     };
+  },
+  computed: {
+    filteredJobs() {
+      let jobs = this.jobs;
+
+      if (this.filters.role) {
+        jobs = jobs.filter((job) => {
+          return job.role === this.filters.role;
+        });
+      }
+
+      if (this.filters.languages.length > 0) {
+        jobs = jobs.filter((job) => {
+          return this.filters.languages.every((language) => {
+            return job.languages.includes(language);
+          });
+        });
+      }
+
+      return jobs;
+    },
+  },
+  methods: {
+    applyRoleFilter(role) {
+      this.filters.role = role;
+    },
+    applyLanguageFilter(language) {
+      if (!this.filters.languages.includes(language)) {
+        this.filters.languages.push(language);
+      }
+    },
   },
 };
 </script>
