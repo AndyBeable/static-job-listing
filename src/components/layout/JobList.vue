@@ -1,6 +1,6 @@
 <template>
   <section>
-    <ul>
+    <ul class="filters-container">
       <li v-if="filters.role">{{ filters.role }}</li>
       <li v-if="filters.level">{{ filters.level }}</li>
       <li v-for="language in filters.languages" :key="language">
@@ -24,6 +24,7 @@
           :languages="job.languages"
           :tools="job.tools"
           @clicked-on-role="applyRoleFilter"
+          @clicked-on-level="applyLevelFilter"
           @clicked-on-language="applyLanguageFilter"
         ></job-item>
       </base-card>
@@ -208,6 +209,12 @@ export default {
         });
       }
 
+      if (this.filters.level) {
+        jobs = jobs.filter((job) => {
+          return job.level === this.filters.level;
+        });
+      }
+
       if (this.filters.languages.length > 0) {
         jobs = jobs.filter((job) => {
           return this.filters.languages.every((language) => {
@@ -222,6 +229,9 @@ export default {
   methods: {
     applyRoleFilter(role) {
       this.filters.role = role;
+    },
+    applyLevelFilter(level) {
+      this.filters.level = level;
     },
     applyLanguageFilter(language) {
       if (!this.filters.languages.includes(language)) {
@@ -239,5 +249,8 @@ section {
 
 ul {
   padding: 0;
+}
+
+.filters-container {
 }
 </style>

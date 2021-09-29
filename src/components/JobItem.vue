@@ -22,7 +22,7 @@
             <button @click="filterByRole">{{ role }}</button>
           </li>
           <li>
-            <button @click="test">{{ level }}</button>
+            <button @click="filterByLevel">{{ level }}</button>
           </li>
           <li v-for="language in languages" :key="language">
             <button @click="filterByLanguage(language)">{{ language }}</button>
@@ -56,6 +56,9 @@ export default {
   methods: {
     filterByRole() {
       this.$emit('clickedOnRole', this.role);
+    },
+    filterByLevel() {
+      this.$emit('clickedOnLevel', this.level);
     },
     filterByLanguage(language) {
       this.$emit('clickedOnLanguage', language);
