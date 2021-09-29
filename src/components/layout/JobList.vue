@@ -26,6 +26,7 @@
           @clicked-on-role="applyRoleFilter"
           @clicked-on-level="applyLevelFilter"
           @clicked-on-language="applyLanguageFilter"
+          @clicked-on-tool="applyToolFilter"
         ></job-item>
       </base-card>
     </ul>
@@ -223,6 +224,14 @@ export default {
         });
       }
 
+      if (this.filters.tools.length > 0) {
+        jobs = jobs.filter((job) => {
+          return this.filters.tools.every((tool) => {
+            return job.tools.includes(tool);
+          });
+        });
+      }
+
       return jobs;
     },
   },
@@ -236,6 +245,11 @@ export default {
     applyLanguageFilter(language) {
       if (!this.filters.languages.includes(language)) {
         this.filters.languages.push(language);
+      }
+    },
+    applyToolFilter(tool) {
+      if (!this.filters.tools.includes(tool)) {
+        this.filters.tools.push(tool);
       }
     },
   },

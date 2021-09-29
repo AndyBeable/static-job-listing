@@ -28,7 +28,7 @@
             <button @click="filterByLanguage(language)">{{ language }}</button>
           </li>
           <li v-for="tool in tools" :key="tool">
-            <button @click="test">{{ tool }}</button>
+            <button @click="filterByTool(tool)">{{ tool }}</button>
           </li>
         </ul>
       </div>
@@ -62,6 +62,9 @@ export default {
     },
     filterByLanguage(language) {
       this.$emit('clickedOnLanguage', language);
+    },
+    filterByTool(tool) {
+      this.$emit('clickedOnTool', tool);
     },
   },
 };
