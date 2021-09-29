@@ -1,13 +1,13 @@
 <template>
+  <ul class="filters-container">
+    <li v-if="filters.role">{{ filters.role }}</li>
+    <li v-if="filters.level">{{ filters.level }}</li>
+    <li v-for="language in filters.languages" :key="language">
+      {{ language }}
+    </li>
+    <li v-for="tool in filters.tools" :key="tool">{{ tool }}</li>
+  </ul>
   <section>
-    <ul class="filters-container">
-      <li v-if="filters.role">{{ filters.role }}</li>
-      <li v-if="filters.level">{{ filters.level }}</li>
-      <li v-for="language in filters.languages" :key="language">
-        {{ language }}
-      </li>
-      <li v-for="tool in filters.tools" :key="tool">{{ tool }}</li>
-    </ul>
     <ul>
       <base-card>
         <job-item
@@ -266,5 +266,22 @@ ul {
 }
 
 .filters-container {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px #5ba4a4;
+  border-radius: 6px;
+  padding: 2rem;
+  background: #fff;
+  list-style: none;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.filters-container li {
+  background-color: #eef6f6;
+  border-radius: 6px;
+  padding: 1rem;
+  color: #5ba4a4;
+  font-weight: 500;
 }
 </style>
