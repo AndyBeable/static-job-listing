@@ -276,8 +276,8 @@ export default {
     removeLevelFilter() {
       this.filters.level = '';
     },
-    removeLanguagesFilter() {
-      this.filters.languages = [];
+    removeLanguagesFilter(language) {
+      this.filters.languages.splice(language);
     },
     removeToolsFilter() {
       this.filters.tools = [];
@@ -297,6 +297,7 @@ ul {
 
 .filters-container {
   display: flex;
+  flex-direction: column;
   box-shadow: 0 2px 10px #5ba4a4;
   border-radius: 6px;
   padding: 2rem;
@@ -304,6 +305,12 @@ ul {
   list-style: none;
   width: 90%;
   margin: 0 auto;
+}
+
+@media screen and (min-width: 800px) {
+  .filters-container {
+    flex-direction: row;
+  }
 }
 
 .filters-container li {
