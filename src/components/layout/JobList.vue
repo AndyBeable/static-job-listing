@@ -1,11 +1,29 @@
 <template>
   <ul class="filters-container">
-    <li v-if="filters.role">{{ filters.role }}</li>
-    <li v-if="filters.level">{{ filters.level }}</li>
-    <li v-for="language in filters.languages" :key="language">
-      {{ language }}
+    <li v-if="filters.role">
+      <div class="filter-btn-container">
+        {{ filters.role }}
+        <button class="filter-btn" @click="removeRoleFilter">X</button>
+      </div>
     </li>
-    <li v-for="tool in filters.tools" :key="tool">{{ tool }}</li>
+    <li v-if="filters.level">
+      <div class="filter-btn-container">
+        {{ filters.level }}
+        <button class="filter-btn" @click="removeLevelFilter">X</button>
+      </div>
+    </li>
+    <li v-for="language in filters.languages" :key="language">
+      <div class="filter-btn-container">
+        {{ language }}
+        <button class="filter-btn" @click="removeLanguagesFilter">X</button>
+      </div>
+    </li>
+    <li v-for="tool in filters.tools" :key="tool">
+      <div class="filter-btn-container">
+        {{ tool }}
+        <button class="filter-btn" @click="removeToolsFilter">X</button>
+      </div>
+    </li>
   </ul>
   <section>
     <ul>
@@ -252,6 +270,18 @@ export default {
         this.filters.tools.push(tool);
       }
     },
+    removeRoleFilter() {
+      this.filters.role = '';
+    },
+    removeLevelFilter() {
+      this.filters.level = '';
+    },
+    removeLanguagesFilter() {
+      this.filters.languages = [];
+    },
+    removeToolsFilter() {
+      this.filters.tools = [];
+    },
   },
 };
 </script>
@@ -267,7 +297,6 @@ ul {
 
 .filters-container {
   display: flex;
-  justify-content: space-between;
   box-shadow: 0 2px 10px #5ba4a4;
   border-radius: 6px;
   padding: 2rem;
@@ -279,9 +308,28 @@ ul {
 
 .filters-container li {
   background-color: #eef6f6;
-  border-radius: 6px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
   padding: 1rem;
   color: #5ba4a4;
   font-weight: 500;
+  margin-right: 5rem;
+}
+
+.filter-btn-container {
+  position: relative;
+}
+
+.filter-btn {
+  background-color: #5ba4a4;
+  color: #fff;
+  border: none;
+  padding: 1.12rem;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  position: absolute;
+  left: 94px;
+  top: -16px;
+  cursor: pointer;
 }
 </style>
