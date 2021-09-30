@@ -41,8 +41,8 @@
           :level="job.level"
           :languages="job.languages"
           :tools="job.tools"
-          @clicked-on-role="applyRoleFilter"
-          @clicked-on-level="applyLevelFilter"
+          @clicked-on-role="applyFilter($event, 'role')"
+          @clicked-on-level="applyFilter($event, 'level')"
           @clicked-on-language="applyLanguageFilter"
           @clicked-on-tool="applyToolFilter"
         ></job-item>
@@ -254,12 +254,10 @@ export default {
     },
   },
   methods: {
-    applyRoleFilter(role) {
-      this.filters.role = role;
+    applyFilter(value, type) {
+      this.filters[type] = value;
     },
-    applyLevelFilter(level) {
-      this.filters.level = level;
-    },
+
     applyLanguageFilter(language) {
       if (!this.filters.languages.includes(language)) {
         this.filters.languages.push(language);
@@ -277,10 +275,12 @@ export default {
       this.filters.level = '';
     },
     removeLanguagesFilter(language) {
-      this.filters.languages.splice(language);
+      const index = this.filters.languages.indexOf(language);
+      this.filters.languages.splice(index, 1);
     },
-    removeToolsFilter() {
-      this.filters.tools = [];
+    removeToolsFilter(tool) {
+      const index = this.filters.tools.indexOf(tool);
+      this.filters.tools.splice(index, 1);
     },
   },
 };
