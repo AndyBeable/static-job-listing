@@ -6,9 +6,13 @@
     <div>
       <div class="job-container">
         <div>
-          <h3>{{ company }}</h3>
-          <div v-show="isNew">New</div>
-          <div v-show="isFeatured">Featured</div>
+          <div class="company-container">
+            <h3>{{ company }}</h3>
+            <div v-show="isNew" class="badge-new"><span>New!</span></div>
+            <div v-show="isFeatured" class="badge-featured">
+              <span>Featured</span>
+            </div>
+          </div>
           <p class="position">{{ position }}</p>
         </div>
 
@@ -105,7 +109,42 @@ h3 {
   color: #5ba4a4;
   font-weight: 700;
   font-size: 0.9rem;
-  margin-bottom: -10px;
+  margin-right: 10px;
+}
+
+.company-container {
+  display: flex;
+  align-items: center;
+}
+
+.badge-new {
+  background-color: #5ba4a4;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 500;
+  height: 1.5rem;
+  width: 4rem;
+  border-radius: 1rem;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.badge-featured {
+  background-color: #2c3a3a;
+  text-transform: uppercase;
+  padding: 0 2px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 500;
+  height: 1.5rem;
+  width: 4rem;
+  border-radius: 1rem;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .position {
