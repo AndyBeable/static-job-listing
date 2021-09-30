@@ -36,6 +36,8 @@
           :company="job.company"
           :position="job.position"
           :logo="job.logo"
+          :new="job.new"
+          :featured="job.featured"
           :postedAt="job.postedAt"
           :contract="job.contract"
           :location="job.location"

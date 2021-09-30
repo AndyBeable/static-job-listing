@@ -7,6 +7,8 @@
       <div class="job-container">
         <div>
           <h3>{{ company }}</h3>
+          <div v-show="isNew">New</div>
+          <div v-show="isFeatured">Featured</div>
           <p class="position">{{ position }}</p>
         </div>
 
@@ -43,6 +45,8 @@ export default {
     'company',
     'position',
     'logo',
+    'new',
+    'featured',
     'postedAt',
     'contract',
     'location',
@@ -52,6 +56,12 @@ export default {
     'level',
     'tools',
   ],
+  data() {
+    return {
+      isNew: this.new,
+      isFeatured: this.featured,
+    };
+  },
   computed: {},
   methods: {
     filterByRole() {
