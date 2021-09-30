@@ -150,7 +150,7 @@ h3 {
 .position {
   font-weight: 700;
   font-size: 1.1rem;
-  margin-bottom: -2px;
+  margin: 0rem 0rem 0.5rem 0rem;
 }
 
 .job-details {
