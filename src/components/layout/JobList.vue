@@ -3,13 +3,15 @@
     <li v-if="filters.role">
       <div class="filter-btn-container">
         {{ filters.role }}
-        <button class="filter-btn" @click="removeRoleFilter">X</button>
+        <button class="filter-btn" @click="removeFilter('role')">
+          X
+        </button>
       </div>
     </li>
     <li v-if="filters.level">
       <div class="filter-btn-container">
         {{ filters.level }}
-        <button class="filter-btn" @click="removeLevelFilter">X</button>
+        <button class="filter-btn" @click="removeFilter('level')">X</button>
       </div>
     </li>
     <li v-for="language in filters.languages" :key="language">
@@ -268,12 +270,11 @@ export default {
         this.filters.tools.push(tool);
       }
     },
-    removeRoleFilter() {
-      this.filters.role = '';
+
+    removeFilter(type) {
+      this.filters[type] = '';
     },
-    removeLevelFilter() {
-      this.filters.level = '';
-    },
+
     removeLanguagesFilter(language) {
       const index = this.filters.languages.indexOf(language);
       this.filters.languages.splice(index, 1);
