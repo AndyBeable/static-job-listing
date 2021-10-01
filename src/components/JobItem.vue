@@ -97,6 +97,11 @@ export default {
 }
 
 @media screen and (min-width: 1200px) {
+  .job-item {
+    height: 10rem;
+  }
+}
+@media screen and (min-width: 1200px) {
   .job-container {
     width: 100%;
   }
@@ -108,14 +113,16 @@ export default {
 }
 
 .logo {
-  position: absolute;
-  top: -2.5rem;
-  left: 1rem;
-  height: 4rem;
+  height: 6rem;
+  margin-right: 2rem;
 }
 
-@media screen and (min-width: 415px) {
+@media screen and (max-width: 1200px) {
   .logo {
+    position: absolute;
+    top: -2.5rem;
+    left: 1rem;
+    height: 4rem;
   }
 }
 
@@ -199,6 +206,12 @@ ul {
 
 .actions {
   width: 80%;
+}
+
+@media screen and (min-width: 1200px) {
+  .actions {
+    width: 100%;
+  }
 }
 
 button {
