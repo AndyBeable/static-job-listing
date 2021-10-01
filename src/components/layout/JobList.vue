@@ -331,6 +331,8 @@ ul {
   padding-left: 1rem;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 .filter-btn {
@@ -341,6 +343,7 @@ ul {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 
 .filter-btn:hover {

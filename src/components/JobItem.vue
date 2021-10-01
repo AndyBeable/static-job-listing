@@ -93,7 +93,7 @@ export default {
   padding: 2rem 1rem;
   border-left: 5px solid #5ba4a4;
   position: relative;
-  height: 15rem;
+  height: 16rem;
 }
 
 @media screen and (min-width: 1200px) {
