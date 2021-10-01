@@ -292,6 +292,7 @@ export default {
 <style scoped>
 section {
   display: flex;
+  justify-content: center;
 }
 
 ul {
@@ -312,7 +313,7 @@ ul {
   margin-top: -3rem;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1200px) {
   .filters-container {
     flex-direction: row;
   }
@@ -348,5 +349,10 @@ ul {
   left: 100px;
   top: -16px;
   cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #2c3a3a;
 }
 </style>

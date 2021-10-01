@@ -1,9 +1,9 @@
 <template>
   <div class="job-item">
-    <div class="logo-container">
-      <img :src="logo" alt="logo" class="logo" />
-    </div>
-    <div>
+    <div class="job-item-details-container">
+      <div class="logo-container">
+        <img :src="logo" alt="logo" class="logo" />
+      </div>
       <div class="job-container">
         <div>
           <div class="company-container">
@@ -88,14 +88,23 @@ export default {
 .job-item {
   box-shadow: 0 2px 10px #5ba4a4;
   margin: 6rem auto;
-  width: 90%;
   background: #fff;
   border-radius: 6px;
   padding: 2rem 1rem;
   border-left: 5px solid #5ba4a4;
   position: relative;
   height: 15rem;
-  display: flex;
+}
+
+@media screen and (min-width: 1200px) {
+  .job-container {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .job-item-details-container {
+    display: flex;
+  }
 }
 
 .logo {
@@ -103,6 +112,11 @@ export default {
   top: -2.5rem;
   left: 1rem;
   height: 4rem;
+}
+
+@media screen and (min-width: 415px) {
+  .logo {
+  }
 }
 
 h3 {
@@ -159,6 +173,12 @@ h3 {
   justify-items: center;
   border-bottom: 1px solid rgba(199, 214, 214, 1);
   margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .job-details {
+    border: none;
+  }
 }
 
 .job-details p {
